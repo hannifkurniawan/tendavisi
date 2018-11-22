@@ -1,0 +1,348 @@
+// ======================================== REBOOT
+a, i, button{
+	transition: $transition-base;
+}
+
+// ======================================== BUTTON
+button:focus{
+	outline: none;
+}
+
+.btn{
+	text-transform: uppercase;
+
+	&:not(.btn-link){
+		box-shadow: $btn-box-shadow;
+
+		@include hover-focus{
+			box-shadow: $btn-focus-box-shadow;
+		}
+	}
+}
+
+.btn-group{
+	border-radius: $btn-border-radius;
+	box-shadow: $btn-box-shadow;
+
+	.btn{
+		box-shadow: none;
+
+		@include hover-focus{
+			box-shadow: none;
+		}
+	}
+}
+
+.btn-group-sm{
+	border-radius: $border-radius-sm;
+}
+
+.btn-float{
+	bottom: 0;
+	padding: 1.5rem 1rem;
+	position: fixed;
+	right: 0;
+	z-index: 1031;
+}
+
+.btn-icon{
+	border-radius: 50%;
+	box-shadow: $box-shadow-lg;
+	font-size: 1.25rem;
+	height: 3rem;
+	width: 3rem;
+}
+
+// ======================================== FORMS
+.custom-select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	&:focus{
+		background-color: $input-focus-bg;
+	}
+}
+
+.input-group{
+	.input-group-prepend{
+		.input-group-text{
+			border-right: none;
+		}
+
+		~ .form-control{
+			border-left: none;
+		}
+	}
+
+	.input-group-append{
+		.input-group-text{
+			border-left: none;
+		}
+	}
+
+	.form-control:focus{
+		~ .input-group-append{
+			.input-group-text{
+				background-color: $input-focus-bg;
+				border-color: $input-focus-border-color;
+			}
+		}
+	}
+
+	&.focus{
+		.input-group-prepend{
+			.input-group-text{
+				background-color: $input-focus-bg;
+				border-color: $input-focus-border-color;
+			}
+		}
+	}
+}
+
+.input-group-text{
+	transition: $transition-base;
+}
+
+.input-img{
+	cursor: pointer;
+}
+
+// ======================================== NAV
+.nav-link{
+	font-weight: $nav-link-font-weight;
+}
+
+.tab-content{
+	padding: 0 .5rem;
+
+	p{
+		margin-bottom: 0;
+	}
+}
+
+// ======================================== NAVBAR
+.navbar{
+	box-shadow: $navbar-shadow;
+	max-height: $navbar-height;
+}
+
+.navbar-brand{
+	vertical-align: middle;
+}
+
+.navbar-nav{
+	.nav-link{
+		border-radius: $navbar-nav-link-border-radius;
+		padding-right: $navbar-nav-link-padding-x;
+		padding-left: $navbar-nav-link-padding-x;
+		text-transform: uppercase;
+	}
+}
+
+.navbar-dark{
+	color: $white;
+
+	.navbar-toggler{
+		@include hover-focus{
+			background-color: $navbar-dark-hover-bg;
+		}
+	}
+
+	.navbar-nav{
+		.nav-link{
+			@include hover-focus{
+				background-color: $navbar-dark-hover-bg;
+			}
+		}
+	}
+}
+
+// ======================================== NAVSIDE
+.navside{
+	background-color: $navside-bg;
+	height: 100vh;
+	left: 0;
+	padding-top: $navside-padding-top;
+	position: fixed;
+	top: 0;
+	width: $navside-width;
+	z-index: 1029;
+}
+
+.navside-nav{
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	.nav-link{
+		font-size: $font-size-sm;
+		padding-left: calc(#{$navbar-padding-x + $navbar-toggler-padding-x} + #{$border-width});
+		padding-right: calc(#{$navbar-padding-x + $navbar-toggler-padding-x} + #{$border-width});
+		text-transform: uppercase;
+
+		@include hover-focus{
+			> i{
+				color: theme-color("primary");
+			}
+		}
+	}
+
+	.show > .nav-link,
+	.active > .nav-link,
+	.nav-link.show,
+	.nav-link.active{
+		background-color: $grey-400;
+	}
+
+	.submenu{
+		font-size: $font-size-sm;
+		padding-left: 3rem;
+
+		.nav-item{
+			padding-left: .25rem;
+		}
+	}
+}
+
+.navside-header{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+
+	.user{
+		border-bottom: 1px solid $grey-400;
+		padding: 1rem;
+		text-align: center;
+
+		.user-avatar{
+			border: .125rem solid $white;
+			border-radius: 50%;
+			height: 5rem;
+			margin-bottom: .5rem;
+			width: 5rem;
+		}
+
+		.user-name{
+			margin-bottom: 0;
+		}
+
+		.user-role{
+			color: $grey-700;
+			font-size: .75rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+}
+
+// ======================================== PROGRESS
+.progress{
+	position: relative;
+
+	.progress-lg{
+		height: 1.5rem;
+	}
+}
+
+.progress-bar{
+	> span{
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+}
+
+// ======================================== PAGINATION
+.page-link{
+	box-shadow: $box-shadow;
+}
+
+// ======================================== MODALS
+.modal{
+	overflow-y: auto;
+}
+
+@include media-breakpoint-up(xl) {
+  .modal-xl { max-width: $modal-xl; }
+}
+
+// ======================================== DASHBOARD
+.dashboard{
+	padding-left: $navside-width;
+	padding-top: ($navbar-height + 1rem);
+}
+
+.page-title{
+	margin-bottom: 1rem;
+	margin-top: .5rem;
+	text-transform: uppercase;
+}
+
+.recipient-img,
+.donator-img{
+	margin-bottom: 2rem;
+	text-align: center;
+
+	img{
+		height: auto;
+		max-width: 10rem;
+		border-radius: 50%;
+	}
+}
+
+// ======================================== TIMELINE
+.timeline {
+	list-style-type: none;
+	margin-bottom: 0;
+	position: relative;
+
+	&::before{
+		background: $grey-300;
+		content: '';
+		display: inline-block;
+		height: 100%;
+		left: 1.5rem;
+		position: absolute;
+		width: 1px;
+		z-index: 400;
+	}
+
+	> li{
+		margin: 1.25rem 0;
+		padding-left: 1.25rem;
+
+		&::before{
+			background: $white;
+			border: 2px solid theme-color("primary");
+			border-radius: 50%;
+			content: '';
+			display: inline-block;
+			height: 1.5rem;
+			left: .75rem;
+			position: absolute;
+			width: 1.5rem;
+			z-index: 400;
+		}
+	}
+}
+
+// ======================================== DATATABLES
+.card-table{
+	border: none;
+	box-shadow: $box-shadow;
+}
+
+.dataTable{
+	margin: 1rem 0;
+}
+
+.dataTables_length{
+	text-align: right;
+}
+
+.dataTables_paginate .pagination{
+	justify-content: center;
+	margin-bottom: 0;
+}
