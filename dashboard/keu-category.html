@@ -67,7 +67,7 @@
 				<div class="collapse show" id="cashbookCollapse">
 					<ul class="submenu">
 						<li class="nav-item">
-							<a href="#" disabled>Kas</a>
+							<a href="keu-cash.html">Kas</a>
 						</li>
 						<li class="nav-item">
 							<a href="keu-category.html">Kategori</a>
@@ -84,44 +84,174 @@
 		<div class="container-fluid">
 			<h4 class="page-title"><i class="far fa-money-bill-alt fa-fw text-primary mx-2"></i>Kategori</h4>
 
-			<div class="card card-table">
-				<div class="card-body">
-					<table class="table table-borderless table-striped" id="categoryList" width="100%">
-						<thead class="thead-light">
-							<tr>
-								<th>No</th>
-								<th>Nama</th>
-								<th>Kode</th>
-								<th class="text-center">Aksi</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Debet</td>
-								<td>1</td>
-								<td class="text-center">
-									<div class="btn-group btn-group-sm">
-										<button class="btn btn-secondary" title="Lihat Detail" data-toggle="modal" data-target="#modalEditCategory"><i class="far fa-edit fa-fw"></i></button>
-										<button class="btn btn-primary btn-delete" title="Hapus"><i class="fas fa-trash fa-fw"></i></button>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="btn-float">
-						<button class="btn btn-icon btn-primary" data-toggle="modal" data-target="#modalAddCategory"><i class="fas fa-plus"></i></button>
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="pillsTabDebit" data-toggle="pill" href="#pillsDebit" role="tab" aria-controls="pillsDebit" aria-selected="true">Debet</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="pillsTabCredit" data-toggle="pill" href="#pillsCredit" role="tab" aria-controls="pillsCredit" aria-selected="false">Kredit</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="pillsTabPayable" data-toggle="pill" href="#pillsPayable" role="tab" aria-controls="pillsPayable" aria-selected="false">Utang</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="pillsTabReceivable" data-toggle="pill" href="#pillsReceivable" role="tab" aria-controls="pillsPayable" aria-selected="false">Piutang</a>
+				</li>
+			</ul>
+
+			<div class="tab-content p-0">
+
+				<div class="tab-pane fade show active" id="pillsDebit" role="tabpanel" aria-labelledby="pillsTabDebit">
+					<div class="card card-table">
+						<div class="card-body">
+							<table class="table table-borderless table-striped" id="debitList" width="100%">
+								<thead class="thead-light">
+									<tr>
+										<th>No</th>
+										<th>Nama</th>
+										<th>Kode</th>
+										<th>Uraian</th>
+										<th class="text-center">Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Debet</td>
+										<td>1</td>
+										<td>Uraian 1</td>
+										<td class="text-center">
+											<div class="btn-group btn-group-sm">
+												<button class="btn btn-secondary" title="Edit" data-toggle="modal" data-target="#modalEditCategory"><i class="far fa-edit fa-fw"></i></button>
+												<button class="btn btn-primary btn-delete" title="Hapus"><i class="fas fa-trash fa-fw"></i></button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btn-float">
+								<button class="btn btn-icon btn-primary" data-toggle="modal" data-target="#modalAddDebit"><i class="fas fa-plus"></i></button>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<div class="tab-pane fade" id="pillsCredit" role="tabpanel" aria-labelledby="pillsTabCredit">
+					<div class="card card-table">
+						<div class="card-body">
+							<table class="table table-borderless table-striped" id="creditList" width="100%">
+								<thead class="thead-light">
+									<tr>
+										<th>No</th>
+										<th>Nama</th>
+										<th>Kode</th>
+										<th>Uraian</th>
+										<th class="text-center">Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Kredit</td>
+										<td>1</td>
+										<td>Uraian 1</td>
+										<td class="text-center">
+											<div class="btn-group btn-group-sm">
+												<button class="btn btn-secondary" title="Edit" data-toggle="modal" data-target="#modalEditCategory"><i class="far fa-edit fa-fw"></i></button>
+												<button class="btn btn-primary btn-delete" title="Hapus"><i class="fas fa-trash fa-fw"></i></button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btn-float">
+								<button class="btn btn-icon btn-primary" data-toggle="modal" data-target="#modalAddCredit"><i class="fas fa-plus"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="pillsPayable" role="tabpanel" aria-labelledby="pillsTabPayable">
+					<div class="card card-table">
+						<div class="card-body">
+							<table class="table table-borderless table-striped" id="payableList" width="100%">
+								<thead class="thead-light">
+									<tr>
+										<th>No</th>
+										<th>Nama</th>
+										<th>Kode</th>
+										<th>Uraian</th>
+										<th class="text-center">Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Utang 1</td>
+										<td>1</td>
+										<td>Uraian 1</td>
+										<td class="text-center">
+											<div class="btn-group btn-group-sm">
+												<button class="btn btn-secondary" title="Edit" data-toggle="modal" data-target="#modalEditCategory"><i class="far fa-edit fa-fw"></i></button>
+												<button class="btn btn-primary btn-delete" title="Hapus"><i class="fas fa-trash fa-fw"></i></button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btn-float">
+								<button class="btn btn-icon btn-primary" data-toggle="modal" data-target="#modalAddPayable"><i class="fas fa-plus"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="pillsReceivable" role="tabpanel" aria-labelledby="pillsTabReceivable">
+					<div class="card card-table">
+						<div class="card-body">
+							<table class="table table-borderless table-striped" id="receivableList" width="100%">
+								<thead class="thead-light">
+									<tr>
+										<th>No</th>
+										<th>Nama</th>
+										<th>Kode</th>
+										<th>Uraian</th>
+										<th class="text-center">Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Piutang</td>
+										<td>1</td>
+										<td>Uraian 1</td>
+										<td class="text-center">
+											<div class="btn-group btn-group-sm">
+												<button class="btn btn-secondary" title="Edit" data-toggle="modal" data-target="#modalEditCategory"><i class="far fa-edit fa-fw"></i></button>
+												<button class="btn btn-primary btn-delete" title="Hapus"><i class="fas fa-trash fa-fw"></i></button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btn-float">
+								<button class="btn btn-icon btn-primary" data-toggle="modal" data-target="#modalAddReceivable"><i class="fas fa-plus"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
+
+			
 		</div>
 
 		<!-- MODAL -->
-		<div class="modal fade" id="modalAddCategory" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal fade" id="modalAddDebit" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Tambah Kategori</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Debit</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -137,7 +267,112 @@
 								<label>Kategori</label>
 								<input type="text" class="form-control" placeholder="Nama kategori">
 							</div>
+							<div class="form-group">
+								<label>Uraian</label>
+								<textarea class="form-control" rows="5" placeholder="Uraian"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary"><i class="far fa-save fa-fw mr-2"></i>Save</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div class="modal fade" id="modalAddCredit" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Kredit</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<form>
+							<div class="form-group">
+								<label>Kode</label>
+								<input type="text" class="form-control" placeholder="Kode kategori">
+							</div>
+							<div class="form-group">
+								<label>Kategori</label>
+								<input type="text" class="form-control" placeholder="Nama kategori">
+							</div>
+							<div class="form-group">
+								<label>Uraian</label>
+								<textarea class="form-control" rows="5" placeholder="Uraian"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary"><i class="far fa-save fa-fw mr-2"></i>Save</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalAddPayable" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Utang</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<form>
+							<div class="form-group">
+								<label>Kode</label>
+								<input type="text" class="form-control" placeholder="Kode kategori">
+							</div>
+							<div class="form-group">
+								<label>Kategori</label>
+								<input type="text" class="form-control" placeholder="Nama kategori">
+							</div>
+							<div class="form-group">
+								<label>Uraian</label>
+								<textarea class="form-control" rows="5" placeholder="Uraian"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary"><i class="far fa-save fa-fw mr-2"></i>Save</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalAddReceivable" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Piutang</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<form>
+							<div class="form-group">
+								<label>Kode</label>
+								<input type="text" class="form-control" placeholder="Kode kategori">
+							</div>
+							<div class="form-group">
+								<label>Kategori</label>
+								<input type="text" class="form-control" placeholder="Nama kategori">
+							</div>
+							<div class="form-group">
+								<label>Uraian</label>
+								<textarea class="form-control" rows="5" placeholder="Uraian"></textarea>
+							</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -186,7 +421,7 @@
 				'sLengthSelect': 'custom-select'
 			});
 
-			$('#categoryList').DataTable({
+			$('#debitList').DataTable({
 				responsive: true,
 				language: {
 					search: '_INPUT_',
@@ -227,6 +462,160 @@
 				],
 				'columns': [
 					{ 'width': '10%' },
+					null,
+					null,
+					null,
+					{
+						'width' : '15%',
+						'orderable': false
+					}
+				],
+			});
+
+			$('#creditList').DataTable({
+				responsive: true,
+				language: {
+					search: '_INPUT_',
+					searchPlaceholder: 'Masukkan kata kunci pencarian',
+					lengthMenu: '_MENU_',
+					paginate: {
+						'previous': '&lt;',
+						'next': '&gt;'
+					}
+				},
+				dom: '<"row"<"col-lg-2"B><"col-lg-8"f><"col-lg-2"l>>rtp',
+				buttons: [
+					{
+						extend: 'copy',
+						className: 'btn-secondary',
+						text: '<i class="far fa-copy fa-fw"></i>',
+						attr: {
+							title: 'Copy to clipboard'
+
+						}
+					},
+					{
+						extend: 'csv',
+						className: 'btn-secondary',
+						text: '<i class="fas fa-file-csv fa-fw"></i>',
+						attr: {
+							title: 'Export to CSV File'
+						}
+					},
+					{
+						extend: 'excel',
+						className: 'btn-secondary',
+						text: '<i class="far fa-file-excel fa-fw"></i>',
+						attr: {
+							title: 'Export to EXCEL File'
+						}
+					},
+				],
+				'columns': [
+					{ 'width': '10%' },
+					null,
+					null,
+					null,
+					{
+						'width' : '15%',
+						'orderable': false
+					}
+				],
+			});
+
+			$('#payableList').DataTable({
+				responsive: true,
+				language: {
+					search: '_INPUT_',
+					searchPlaceholder: 'Masukkan kata kunci pencarian',
+					lengthMenu: '_MENU_',
+					paginate: {
+						'previous': '&lt;',
+						'next': '&gt;'
+					}
+				},
+				dom: '<"row"<"col-lg-2"B><"col-lg-8"f><"col-lg-2"l>>rtp',
+				buttons: [
+					{
+						extend: 'copy',
+						className: 'btn-secondary',
+						text: '<i class="far fa-copy fa-fw"></i>',
+						attr: {
+							title: 'Copy to clipboard'
+
+						}
+					},
+					{
+						extend: 'csv',
+						className: 'btn-secondary',
+						text: '<i class="fas fa-file-csv fa-fw"></i>',
+						attr: {
+							title: 'Export to CSV File'
+						}
+					},
+					{
+						extend: 'excel',
+						className: 'btn-secondary',
+						text: '<i class="far fa-file-excel fa-fw"></i>',
+						attr: {
+							title: 'Export to EXCEL File'
+						}
+					},
+				],
+				'columns': [
+					{ 'width': '10%' },
+					null,
+					null,
+					null,
+					{
+						'width' : '15%',
+						'orderable': false
+					}
+				],
+			});
+
+			$('#receivableList').DataTable({
+				responsive: true,
+				language: {
+					search: '_INPUT_',
+					searchPlaceholder: 'Masukkan kata kunci pencarian',
+					lengthMenu: '_MENU_',
+					paginate: {
+						'previous': '&lt;',
+						'next': '&gt;'
+					}
+				},
+				dom: '<"row"<"col-lg-2"B><"col-lg-8"f><"col-lg-2"l>>rtp',
+				buttons: [
+					{
+						extend: 'copy',
+						className: 'btn-secondary',
+						text: '<i class="far fa-copy fa-fw"></i>',
+						attr: {
+							title: 'Copy to clipboard'
+
+						}
+					},
+					{
+						extend: 'csv',
+						className: 'btn-secondary',
+						text: '<i class="fas fa-file-csv fa-fw"></i>',
+						attr: {
+							title: 'Export to CSV File'
+						}
+					},
+					{
+						extend: 'excel',
+						className: 'btn-secondary',
+						text: '<i class="far fa-file-excel fa-fw"></i>',
+						attr: {
+							title: 'Export to EXCEL File'
+						}
+					},
+				],
+				'columns': [
+					{ 'width': '10%' },
+					null,
 					null,
 					null,
 					{
