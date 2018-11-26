@@ -20,7 +20,7 @@
 	<!-- Main Style -->
 	<link rel="stylesheet" href="../css/app.css">
 
-	<title>Tenda Visi — Campaign</title>
+	<title>Tenda Visi — CEO</title>
 </head>
 <body>
 
@@ -49,21 +49,18 @@
 			<div class="user">
 				<img src="../img/avatar.jpg" class="user-avatar">
 				<h6 class="user-name">Full Name</h6>
-				<span class="user-role">Fund Rising Officer</span>
+				<span class="user-role">Chief Executive Officer</span>
 			</div>
 		</div>
 		<ul class="navside-nav">
 			<li class="nav-item">
-				<a href="fro-home.html" class="nav-link"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
-			</li>
-			<li class="nav-item">
-				<a href="fro-donation.html" class="nav-link"><i class="fas fa-donate fa-fw mr-2"></i>Donasi</a>
-			</li>
-			<li class="nav-item">
-				<a href="fro-donator.html" class="nav-link"><i class="fas fa-hand-holding-usd fa-fw mr-2"></i>Donatur</a>
+				<a href="ceo-home.html" class="nav-link"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
 			</li>
 			<li class="nav-item active">
-				<a href="fro-campaign.html" class="nav-link"><i class="fas fa-bullhorn fa-fw mr-2"></i>Campaign</a>
+				<a href="ceo-program.html" class="nav-link"><i class="fas fa-cube fa-fw mr-2"></i>Program</a>
+			</li>
+			<li class="nav-item">
+				<a href="ceo-donator.html" class="nav-link"><i class="fas fa-hand-holding-usd fa-fw mr-2"></i>Donatur</a>
 			</li>
 		</ul>
 	</nav>
@@ -72,7 +69,7 @@
 	<!-- MAIN -->
 	<main class="dashboard">
 		<div class="container-fluid">
-			<h4 class="page-title"><i class="fas fa-bullhorn fa-fw text-primary mx-2"></i>Campaign</h4>
+			<h4 class="page-title"><i class="fas fa-cube fa-fw text-primary mx-2"></i>Program</h4>
 
 			<div class="card card-table">
 				<div class="card-body">
@@ -99,9 +96,10 @@
 									</div>
 								</td>
 								<td class="text-center">
+									<button class="btn btn-sm btn-secondary" title="Lihat Detail" data-toggle="modal" data-target="#modalViewProgram"><i class="far fa-eye fa-fw"></i></button>
 									<div class="btn-group btn-group-sm">
-										<button class="btn btn-secondary" title="Lihat Detail" data-toggle="modal" data-target="#modalViewProgram"><i class="far fa-eye fa-fw"></i></button>
-										<button class="btn btn-tertiary" title="Share"><i class="far fa-share-square"></i></button>
+										<button class="btn btn-success btn-campaign" title="Campaign"><i class="fas fa-check fa-fw"></i></button>
+										<button class="btn btn-danger btn-uncampaign" title="Uncampaign"><i class="fas fa-times fa-fw"></i></button>
 									</div>
 								</td>
 							</tr>
@@ -122,20 +120,20 @@
 						</button>
 					</div>
 					<div class="modal-body">
-
+						
 						<div class="row">
 							<div class="col-lg-6 d-flex align-items-center">
 								<img src="../img/program.jpg">
 							</div>
 							<div class="col-lg-6">
-
+								
 								<h3>Lorem ipsum dolor sit amet.</h3>
 								<span class="badge badge-primary">Kategori Program</span>
 								<div class="d-flex align-items-center my-3">
 									<img src="../img/avatar.jpg" class="rounded-circle mr-2" height="32px" width="32px">
 									<span>PRO Tevis</span><small class="text-muted ml-auto">20 November 2018</small>
 								</div>
-
+								
 								<div class="card">
 									<div class="card-body">
 										<div class="progress progress-lg">
@@ -297,7 +295,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-
+						
 						<div>
 							<div class="recipient-img">
 								<img src="../img/recipient.jpg">
@@ -339,7 +337,7 @@
 
 	</main>
 	<!-- MAIN-END -->
-
+	
 	<!-- Bootstrap -->
 	<script src="../vendors/jquery/jquery-3.3.1.min.js"></script>
 	<script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -353,6 +351,9 @@
 	<!-- Datatables Buttons -->
 	<script src="../vendors/datatables/js/buttons.bootstrap4.js"></script>
 	<script src="../vendors/datatables/js/buttons.html5.js"></script>
+
+	<!-- Sweetalert -->
+	<script src="../vendors/swal/sweetalert.min.js"></script>
 
 	<!-- Main Script -->
 	<script src="../js/app.js"></script>
@@ -433,7 +434,17 @@
 						'next': '&gt;'
 					}
 				},
-				dom: '<"row"<"col-lg-10"f><"col-lg-2"l>>rtp',
+				dom: '<"row"<"col-lg-2"B><"col-lg-8"f><"col-lg-2"l>>rtp',
+				buttons: [
+					{
+						text: '<i class="fas fa-plus fa-fw mr-2"></i>Tambah',
+						attr: {
+							title: 'Tambah Penerima Manfaat',
+							'data-toggle': 'modal',
+							'data-target': '#modalAddRecipient'
+						}
+					},
+				],
 				'columns': [
 					{ 'width': '10%' },
 					null,
@@ -467,6 +478,51 @@
 			});
 
 			$('.dataTables_filter').append('<div class="input-group-append"><span class="input-group-text"><i class="fas fa-search fa-fw"></i></span></div>');
+
+			// Sweetalert
+			$('.btn-campaign').click(function (e) {
+				e.preventDefault();
+				swal({
+					title: 'Apakah Anda yakin?',
+					text: 'Program yang dipilih akan di-campaign',
+					icon: 'warning',
+					buttons: true,
+					dangerMode: true,
+				})
+				.then((willDelete) => {
+					if (willDelete) {
+						swal('Program telah di-campaign', {
+							icon: 'success',
+						});
+					} else {
+						swal('Program tidak di-campaign', {
+							icon: 'error',
+						});
+					}
+				});
+			});
+
+			$('.btn-uncampaign').click(function (e) {
+				e.preventDefault();
+				swal({
+					title: 'Apakah Anda yakin?',
+					text: 'Program yang dipilih akan di-uncampaign',
+					icon: 'warning',
+					buttons: true,
+					dangerMode: true,
+				})
+				.then((willDelete) => {
+					if (willDelete) {
+						swal('Program telah di-uncampaign', {
+							icon: 'success',
+						});
+					} else {
+						swal('Program tidak di-uncampaign', {
+							icon: 'error',
+						});
+					}
+				});
+			});
 		});
 	</script>
 </body>

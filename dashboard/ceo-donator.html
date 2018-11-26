@@ -17,10 +17,13 @@
 	<link rel="stylesheet" href="../vendors/datatables/css/responsive.bootstrap4.css">
 	<link rel="stylesheet" href="../vendors/datatables/css/buttons.bootstrap4.css">
 
+	<!-- Summernote -->
+	<link rel="stylesheet" href="../vendors/summernote/summernote-bs4.css">
+
 	<!-- Main Style -->
 	<link rel="stylesheet" href="../css/app.css">
 
-	<title>Tenda Visi — Donatur</title>
+	<title>Tenda Visi — CEO</title>
 </head>
 <body>
 
@@ -49,21 +52,18 @@
 			<div class="user">
 				<img src="../img/avatar.jpg" class="user-avatar">
 				<h6 class="user-name">Full Name</h6>
-				<span class="user-role">Fund Rising Officer</span>
+				<span class="user-role">Chief Executive Officer</span>
 			</div>
 		</div>
 		<ul class="navside-nav">
 			<li class="nav-item">
-				<a href="fro-home.html" class="nav-link"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
+				<a href="ceo-home.html" class="nav-link"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
 			</li>
 			<li class="nav-item">
-				<a href="fro-donation.html" class="nav-link"><i class="fas fa-donate fa-fw mr-2"></i>Donasi</a>
+				<a href="ceo-program.html" class="nav-link"><i class="fas fa-cube fa-fw mr-2"></i>Program</a>
 			</li>
 			<li class="nav-item active">
-				<a href="fro-donator.html" class="nav-link"><i class="fas fa-hand-holding-usd fa-fw mr-2"></i>Donatur</a>
-			</li>
-			<li class="nav-item">
-				<a href="fro-campaign.html" class="nav-link"><i class="fas fa-bullhorn fa-fw mr-2"></i>Campaign</a>
+				<a href="ceo-donator.html" class="nav-link"><i class="fas fa-hand-holding-usd fa-fw mr-2"></i>Donatur</a>
 			</li>
 		</ul>
 	</nav>
@@ -115,7 +115,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-
+						
 						<div>
 							<div class="recipient-img">
 								<img src="../img/recipient.jpg">
@@ -156,10 +156,11 @@
 				</div>
 			</div>
 		</div>
+		<!-- MODAL-END -->
 
 	</main>
 	<!-- MAIN-END -->
-
+	
 	<!-- Bootstrap -->
 	<script src="../vendors/jquery/jquery-3.3.1.min.js"></script>
 	<script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -183,7 +184,7 @@
 
 			// MODAL
 			$('.modal').find('img').addClass('img-fluid');
-
+			
 			// Datatables
 			$.extend( $.fn.dataTableExt.oStdClasses, {
 				'sFilter': 'dataTables_filter input-group',

@@ -23,7 +23,7 @@
 	<!-- Main Style -->
 	<link rel="stylesheet" href="../css/app.css">
 
-	<title>Tenda Visi — Program</title>
+	<title>Tenda Visi — Donasi</title>
 </head>
 <body>
 
@@ -185,7 +185,6 @@
 
 	<!-- Animations -->
 	<script src="../vendors/waves/waves.js"></script>
-	<script src="../vendors/swal/sweetalert.min.js"></script>
 
 	<!-- Datatables Core -->
 	<script src="../vendors/datatables/js/datatables.js"></script>
@@ -194,18 +193,15 @@
 	<script src="../vendors/datatables/js/buttons.bootstrap4.js"></script>
 	<script src="../vendors/datatables/js/buttons.html5.js"></script>
 
-	<!-- Sweetalert -->
-	<script src="../vendors/swal/sweetalert.min.js"></script>
-
-	<!-- Summernote -->
-	<script src="../vendors/summernote/summernote-bs4.js"></script>
-
 	<!-- Main Script -->
 	<script src="../js/app.js"></script>
 
 	<!-- Custom Script -->
 	<script type="text/javascript">
 		$(document).ready(function () {
+
+			// MODAL
+			$('.modal').find('img').addClass('img-fluid');
 
 			// Datatables
 			$.extend( $.fn.dataTableExt.oStdClasses, {
@@ -266,38 +262,6 @@
 			});
 
 			$('.dataTables_filter').append('<div class="input-group-append"><span class="input-group-text"><i class="fas fa-search fa-fw"></i></span></div>');
-
-			// Sweetalert
-			$('.btn-delete').click(function (e) {
-				e.preventDefault();
-				swal({
-					title: 'Apakah Anda yakin?',
-					text: 'Entri yang terhapus tidak dapat dikembalikan!',
-					icon: 'warning',
-					buttons: true,
-					dangerMode: true,
-				})
-				.then((willDelete) => {
-					if (willDelete) {
-						swal('Poof! Entri telah terhapus', {
-							icon: 'success',
-						});
-					} else {
-						swal('Entri tidak terhapus!', {
-							icon: 'error',
-						});
-					}
-				});
-			});
-
-			// MODAL
-			$('.modal').find('img').addClass('img-fluid');
-
-			// Summernote
-			$('#addProgress').summernote({
-				tabsize: 2,
-				height: 256
-			});
 		});
 	</script>
 </body>

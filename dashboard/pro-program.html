@@ -81,6 +81,7 @@
 							<tr>
 								<th>No</th>
 								<th>Nama</th>
+								<th>Kategori</th>
 								<th>Status</th>
 								<th class="text-center">Aksi</th>
 							</tr>
@@ -89,6 +90,7 @@
 							<tr>
 								<td>1</td>
 								<td>Nama Program 1</td>
+								<td>Kategori Program 1</td>
 								<td>
 									<div class="progress">
 										<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" title="25%">
@@ -160,7 +162,8 @@
 
 						<nav class="py-3">
 							<div class="nav nav-tabs" id="nav-tab" role="tablist">
-								<a class="nav-item nav-link active" id="navTabDetail" data-toggle="tab" href="#tabDetail" role="tab" aria-controls="tabDetail" aria-selected="true">Detail</a>
+								<a class="nav-item nav-link active" id="navTabDescription" data-toggle="tab" href="#tabDescription" role="tab" aria-controls="tabDescription" aria-selected="true">Deskripsi</a>
+								<a class="nav-item nav-link" id="navTabDetail" data-toggle="tab" href="#tabDetail" role="tab" aria-controls="tabDetail" aria-selected="true">Detail</a>
 								<a class="nav-item nav-link" id="navTabProgress" data-toggle="tab" href="#tabProgress" role="tab" aria-controls="tabProgress" aria-selected="false">Progres</a>
 								<a class="nav-item nav-link" id="navTabRecipient" data-toggle="tab" href="#tabRecipient" role="tab" aria-controls="tabRecipient" aria-selected="false">Penerima Manfaat</a>
 								<a class="nav-item nav-link" id="navTabDonator" data-toggle="tab" href="#tabDonator" role="tab" aria-controls="tabDonator" aria-selected="false">Donatur</a>
@@ -168,7 +171,26 @@
 						</nav>
 						<div class="tab-content" id="nav-tabContent">
 
-							<div class="tab-pane fade show active" id="tabDetail" role="tabpanel" aria-labelledby="navTabDetail">
+							<div class="tab-pane fade show active" id="tabDescription" role="tabpanel" aria-labelledby="navTabDescription">
+								<dl class="row">
+									<dt class="col-sm-3">Deskripsi Singkat</dt>
+									<dd class="col-sm-9">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</dd>
+									<dt class="col-sm-3">Deskripsi Lengkap</dt>
+									<dd class="col-sm-9">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										<img src="../img/program.jpg" class="my-3">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									</dd>
+								</dl>
+								<div class="text-center">
+									<button class="btn btn-icon btn-primary"><i class="far fa-edit"></i></button>
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="tabDetail" role="tabpanel" aria-labelledby="navTabDetail">
 								<dl class="row">
 									<dt class="col-sm-4">Tanggal Mulai Campaign</dt>
 									<dd class="col-sm-8">20 November 2018</dd>
@@ -202,6 +224,7 @@
 									<li>
 										<h6>New Web Design<small class="float-right text-muted">20 November 2018</small></h6>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+										<p class="py-3"><a href="#"><i class="fas fa-download fa-fw mr-2"></i>Unduh Dokumen</a></p>
 									</li>
 									<li>
 										<h6>New Web Design<small class="float-right text-muted">20 November 2018</small></h6>
@@ -225,7 +248,8 @@
 										<tr>
 											<th>No</th>
 											<th>Nama</th>
-											<th>Lembaga</th>
+											<th>Kategori</th>
+											<th>Kecamatan</th>
 											<th class="text-center">Aksi</th>
 										</tr>
 									</thead>
@@ -233,7 +257,8 @@
 										<tr>
 											<td>1</td>
 											<td>Nama Penerima Manfaat 1</td>
-											<td>Lembaga Penerima Manfaat 1</td>
+											<td>Kategori Penerima Manfaat 1</td>
+											<td>Kecamatan Penerima Manfaat 1</td>
 											<td class="text-center">
 												<div class="btn-group btn-group-sm">
 													<button class="btn btn-secondary" title="Lihat Detail" data-toggle="modal" data-target="#modalViewRecipient"><i class="far fa-eye fa-fw"></i></button>
@@ -320,47 +345,6 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="modal fade" id="modalAddProgress" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Tambah Progress</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-
-						<form>
-							<div class="form-group row">
-								<div class="col-sm-2">
-									<label>Judul</label>
-								</div>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="Judul progress">
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-2">
-									<label>Tanggal</label>
-								</div>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="dd/mm/yyyy">
-								</div>
-							</div>
-							<div id="addProgress"></div>
-
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-						<button type="button" class="btn btn-primary"><i class="far fa-save fa-fw mr-2"></i>Simpan</button>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -503,8 +487,12 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Deskripsi</label>
-								<textarea class="form-control" rows="5" placeholder="Deskripsi program"></textarea>
+								<label>Deskripsi Singkat</label>
+								<textarea class="form-control" rows="3" placeholder="Deskripsi singkat program"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Deskripsi Lengkap</label>
+								<div id="addDescription"></div>
 							</div>
 
 						</form>
@@ -547,6 +535,59 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-primary"><i class="far fa-save fa-fw mr-2"></i>Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalAddProgress" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Tambah Progress</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+
+						<form>
+							<div class="form-group row">
+								<div class="col-sm-2">
+									<label>Judul</label>
+								</div>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" placeholder="Judul progress">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-2">
+									<label>Tanggal</label>
+								</div>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" placeholder="dd/mm/yyyy">
+								</div>
+							</div>
+							<div class="form-group">
+								<div id="addProgress"></div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-2">
+									<label>Dokumen</label>
+								</div>
+								<div class="col-sm-10">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="uploadDocument">
+										<label class="custom-file-label" for="uploadDocument">Pilih dokumen</label>
+									</div>
+								</div>
+							</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+						<button type="button" class="btn btn-primary"><i class="far fa-save fa-fw mr-2"></i>Simpan</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -633,6 +674,7 @@
 					{ 'width': '10%' },
 					null,
 					null,
+					null,
 					{
 						'width' : '15%',
 						'orderable': false
@@ -664,6 +706,7 @@
 				],
 				'columns': [
 					{ 'width': '10%' },
+					null,
 					null,
 					null,
 					{
@@ -722,9 +765,14 @@
 			$('.modal').find('img').addClass('img-fluid');
 
 			// Summernote
+			$('#addDescription').summernote({
+				tabsize: 2,
+				height: 256
+			});
+
 			$('#addProgress').summernote({
 				tabsize: 2,
-        height: 256
+				height: 256
 			});
 		});
 	</script>

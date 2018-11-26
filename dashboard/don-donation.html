@@ -20,7 +20,7 @@
 	<!-- Main Style -->
 	<link rel="stylesheet" href="../css/app.css">
 
-	<title>Tenda Visi — Donatur</title>
+	<title>Tenda Visi — Donasi</title>
 </head>
 <body>
 
@@ -49,21 +49,15 @@
 			<div class="user">
 				<img src="../img/avatar.jpg" class="user-avatar">
 				<h6 class="user-name">Full Name</h6>
-				<span class="user-role">Fund Rising Officer</span>
+				<span class="user-role">Donatur</span>
 			</div>
 		</div>
 		<ul class="navside-nav">
 			<li class="nav-item">
-				<a href="fro-home.html" class="nav-link"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
-			</li>
-			<li class="nav-item">
-				<a href="fro-donation.html" class="nav-link"><i class="fas fa-donate fa-fw mr-2"></i>Donasi</a>
+				<a href="don-home.html" class="nav-link"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
 			</li>
 			<li class="nav-item active">
-				<a href="fro-donator.html" class="nav-link"><i class="fas fa-hand-holding-usd fa-fw mr-2"></i>Donatur</a>
-			</li>
-			<li class="nav-item">
-				<a href="fro-campaign.html" class="nav-link"><i class="fas fa-bullhorn fa-fw mr-2"></i>Campaign</a>
+				<a href="don-donation.html" class="nav-link"><i class="fas fa-donate fa-fw mr-2"></i>Donasi</a>
 			</li>
 		</ul>
 	</nav>
@@ -72,29 +66,31 @@
 	<!-- MAIN -->
 	<main class="dashboard">
 		<div class="container-fluid">
-			<h4 class="page-title"><i class="fas fa-hand-holding-usd fa-fw text-primary mx-2"></i>Donatur</h4>
+			<h4 class="page-title"><i class="fas fa-donate fa-fw text-primary mx-2"></i>Donasi</h4>
 
 			<div class="card card-table">
 				<div class="card-body">
-					<table class="table table-borderless table-striped" id="donatorList" width="100%">
+					<table class="table table-borderless table-striped" id="donationList" width="100%">
 						<thead class="thead-light">
 							<tr>
-								<th>No</th>
-								<th>Nama</th>
-								<th>No. Telepon</th>
-								<th>Email</th>
+								<th>Tanggal</th>
+								<th>Program</th>
+								<th>Jumlah</th>
+								<th>Status</th>
 								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>1</td>
-								<td>Nama Donatur 1</td>
-								<td>0812345678910</td>
-								<td>emaildonatur@email.com</td>
+								<td>23/11/2019</td>
+								<td>Nama Program 1</td>
+								<td>Jumlah Transfer 1</td>
+								<td><span class="badge badge-secondary">Belum Konfirmasi</span></td>
 								<td class="text-center">
+									<button class="btn btn-sm btn-secondary" title="Lihat Detail" data-toggle="modal" data-target="#modalViewDonation"><i class="far fa-eye fa-fw"></i></button>
 									<div class="btn-group btn-group-sm">
-										<button class="btn btn-secondary" title="Lihat Detail" data-toggle="modal" data-target="#modalViewDonator"><i class="far fa-eye fa-fw"></i></button>
+										<button class="btn btn-success btn-confirm" title="Konfirmasi"><i class="fas fa-check fa-fw"></i></button>
+										<button class="btn btn-danger btn-delete" title="Batalkan Donasi"><i class="fas fa-times fa-fw"></i></button>
 									</div>
 								</td>
 							</tr>
@@ -105,50 +101,38 @@
 		</div>
 
 		<!-- MODAL -->
-		<div class="modal fade" id="modalViewDonator" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog modal-xl" role="document">
+		<div class="modal fade" id="modalViewDonation" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Detail Donator</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Detail Donasi</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
+						
+						<h3>Lorem ipsum dolor sit amet.</h3>
+						<span class="badge badge-primary">Kategori Program</span>
 
-						<div>
-							<div class="recipient-img">
-								<img src="../img/recipient.jpg">
-								<div>
-									<span class="badge badge-primary">Minat Donatur</span>
-								</div>
+						<div class="card my-3">
+							<div class="card-header">
+								Detail Donasi
 							</div>
-							<dl class="row">
-								<dt class="col-sm-4">Nama</dt>
-								<dd class="col-sm-8">Nama Penerima Manfaat 1</dd>
-								<dt class="col-sm-4">Email</dt>
-								<dd class="col-sm-8">Nomor Induk Kependudukan 1</dd>
-								<dt class="col-sm-4">No. Telepon</dt>
-								<dd class="col-sm-8">Kategori Penerima Manfaat</dd>
-								<dt class="col-sm-4">Tempat & Tanggal Lahir</dt>
-								<dd class="col-sm-8">Lembaga Penerima Manfaat 1</dd>
-								<dt class="col-sm-4">Alamat</dt>
-								<dd class="col-sm-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-									<dl class="row">
-										<dt class="col-sm-4">Kecamatan</dt>
-										<dd class="col-sm-8">Baleendah</dd>
-										<dt class="col-sm-4">Kabupaten/Kota</dt>
-										<dd class="col-sm-8">Kabupaten Bandung</dd>
-										<dt class="col-sm-4">Provinsi</dt>
-										<dd class="col-sm-8">Jawa Barat</dd>
-										<dt class="col-sm-4">Kode Pos</dt>
-										<dd class="col-sm-8">40971</dd>
-									</dl>
-								</dd>
-							</dl>
+							<div class="card-body">
+								<dl class="row mb-0">
+									<dt class="col-sm-4">Status</dt>
+									<dd class="col-sm-8"><span class="badge badge-secondary">Belum Konfirmasi</span></dd>
+									<dt class="col-sm-4">Jumlah Donasi</dt>
+									<dd class="col-sm-8">Jumlah Donasi 1</dd>
+									<dt class="col-sm-4">Metode</dt>
+									<dd class="col-sm-8">Transfer</dd>
+									<dt class="col-sm-4">Tanggal Donasi</dt>
+									<dd class="col-sm-8">21 November 2018</dd>
+								</dl>
+							</div>
 						</div>
-
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -156,10 +140,11 @@
 				</div>
 			</div>
 		</div>
+		<!-- MODAL-END -->
 
 	</main>
 	<!-- MAIN-END -->
-
+	
 	<!-- Bootstrap -->
 	<script src="../vendors/jquery/jquery-3.3.1.min.js"></script>
 	<script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -174,6 +159,9 @@
 	<script src="../vendors/datatables/js/buttons.bootstrap4.js"></script>
 	<script src="../vendors/datatables/js/buttons.html5.js"></script>
 
+	<!-- Sweetalert -->
+	<script src="../vendors/swal/sweetalert.min.js"></script>
+
 	<!-- Main Script -->
 	<script src="../js/app.js"></script>
 
@@ -183,7 +171,7 @@
 
 			// MODAL
 			$('.modal').find('img').addClass('img-fluid');
-
+			
 			// Datatables
 			$.extend( $.fn.dataTableExt.oStdClasses, {
 				'sFilter': 'dataTables_filter input-group',
@@ -191,7 +179,7 @@
 				'sLengthSelect': 'custom-select'
 			});
 
-			$('#donatorList').DataTable({
+			$('#donationList').DataTable({
 				responsive: true,
 				language: {
 					search: '_INPUT_',
@@ -243,6 +231,52 @@
 			});
 
 			$('.dataTables_filter').append('<div class="input-group-append"><span class="input-group-text"><i class="fas fa-search fa-fw"></i></span></div>');
+
+			// Sweetalert
+			$('.btn-confirm').click(function (e) {
+				e.preventDefault();
+				swal({
+					title: 'Apakah Anda yakin?',
+					text: 'Donasi yang dipilih akan dikonfirmasi',
+					icon: 'warning',
+					buttons: true,
+					dangerMode: true,
+				})
+				.then((willDelete) => {
+					if (willDelete) {
+						swal('Donasi telah dikonfirmasi', {
+							icon: 'success',
+						});
+					} else {
+						swal('Donasi tidak dikonfirmasi', {
+							icon: 'error',
+						});
+					}
+				});
+			});
+
+			$('.btn-delete').click(function (e) {
+				e.preventDefault();
+				swal({
+					title: 'Apakah Anda yakin?',
+					text: 'Donasi yang dipilih akan dihapus',
+					icon: 'warning',
+					buttons: true,
+					dangerMode: true,
+				})
+				.then((willDelete) => {
+					if (willDelete) {
+						swal('Donasi telah dihapus', {
+							icon: 'success',
+						});
+					} else {
+						swal('Donasi tidak dihapus', {
+							icon: 'error',
+						});
+					}
+				});
+			});
+
 		});
 	</script>
 </body>
